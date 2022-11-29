@@ -76,7 +76,6 @@ double odd_even_sort(double **array, int array_length, int size)
                 int n = array_length, k = omp_get_num_threads(), id = omp_get_thread_num(), s1, s2, f1, f2;
                 workload(n, 2 * k, 2 * id + 0, &s1, &f1);
                 workload(n, 2 * k, 2 * id + 1, &s2, &f2);
-                printf("%d, %d\n", s1, f2);
                 quicksort(&((*array)[s1]), (f2 - s1) + 1);
             }
         }
@@ -106,11 +105,6 @@ double odd_even_sort(double **array, int array_length, int size)
 
 int validate_args(int argc, char **argv)
 {
-    for (int i = 0; i < argc; i++)
-    {
-        printf("argv[%d]: %s\n", i, argv[i]);
-    }
-
     if (argc < 4)
     {
         printf("\033[31mNot enough arguments! Please provide the number of threads, a path to a file containing an array and a path to a file where results will be written.\033[0m\n");
