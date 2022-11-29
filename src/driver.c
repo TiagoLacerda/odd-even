@@ -30,7 +30,7 @@
 
 int main(int argc, char **argv)
 {
-    int samples = 5;
+    int samples = 10;
     double min = 0.0;
     double max = 1.0;
 
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 
     mkdir("data", 0777); // Assume success
 
-    for (int length = 1000; length <= 5000; length += 1000)
+    for (int length = 1000; length <= 40000; length += 1000)
     {
         sprintf(src, "./data/data_%d_%lf_%lf.txt", length, min, max);
 
