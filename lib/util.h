@@ -1,5 +1,9 @@
 void swap(double *a, double *b);
 
+int min(int a, int b);
+
+int max(int a, int b);
+
 /// @brief Create a random array with [length] values ranging from [min] to [max].
 double *random_double_array(int length, double min, double max);
 

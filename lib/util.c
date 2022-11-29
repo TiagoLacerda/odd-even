@@ -25,6 +25,16 @@ void swap(double *a, double *b)
     *b = temp;
 }
 
+int min(int a, int b)
+{
+    return (a < b) ? a : b;
+}
+
+int max(int a, int b)
+{
+    return (a > b) ? a : b;
+}
+
 double *random_double_array(int length, double min, double max)
 {
     double range = max - min, *array = (double *)malloc(sizeof(double) * length);
