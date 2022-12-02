@@ -67,6 +67,16 @@ int main(int argc, char **argv)
                 system(command);
             }
         }
+
+        sprintf(dst, "./data/result_mp_alt.csv");
+        for (int threads = 1; threads <= 8; threads *= 2)
+        {
+            for (int sample = 0; sample < samples; sample++)
+            {
+                sprintf(command, "./odd-even-open-mp-alt %d %s %s", threads, src, dst);
+                system(command);
+            }
+        }
     }
 
     return 0;
